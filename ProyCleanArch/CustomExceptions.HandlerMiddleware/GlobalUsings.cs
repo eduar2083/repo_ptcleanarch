@@ -1,0 +1,11 @@
+﻿global using Core.Entities.ValueObjects;
+global using CustomExceptions.HandlerMiddleware;
+global using CustomExceptions.HandlerMiddleware.Extensions;
+global using Microsoft.AspNetCore.Builder;
+global using Microsoft.AspNetCore.Diagnostics;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.Extensions.Hosting;
+global using System.Linq.Expressions;
+global using System.Reflection;
+global using System.Text.Json;

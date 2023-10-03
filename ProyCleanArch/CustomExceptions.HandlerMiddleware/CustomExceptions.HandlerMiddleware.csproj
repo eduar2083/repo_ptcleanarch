@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Authors>Edinson Aldaz</Authors>
+    <Company>Aldazsoft</Company>
+    <Copyright>Aldazsoft 2023</Copyright>
+    <Description>Custom Exceptions Handlers</Description>
+    <PackageTags>Exception Handlers</PackageTags>
+    <RepositoryUrl>https://github.com/eduar2083/customexceptions</RepositoryUrl>
+    <Version>1.0.6.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomExceptions\CustomExceptions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+</Project>

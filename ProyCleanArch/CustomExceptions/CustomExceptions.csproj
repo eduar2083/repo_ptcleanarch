@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Authors>Edinson Aldaz</Authors>
+    <Company>Aldazsoft</Company>
+    <Copyright>Aldazsoft 2023</Copyright>
+    <Description>Custom Exceptions</Description>
+    <PackageTags>Exceptions</PackageTags>
+    <RepositoryUrl>https://github.com/eduar2083/customexceptions</RepositoryUrl>
+    <Version>1.0.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Entities\Core.Entities.csproj" />
+  </ItemGroup>
+</Project>
