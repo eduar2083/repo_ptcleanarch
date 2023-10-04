@@ -2,9 +2,9 @@
 
 internal sealed class OrganizationRepository : IOrganizationRepository
 {
-    private readonly OrganizationContext Context;
+    private readonly MasterContext Context;
 
-    public OrganizationRepository(OrganizationContext context)
+    public OrganizationRepository(MasterContext context)
     {
         Context = context;
     }

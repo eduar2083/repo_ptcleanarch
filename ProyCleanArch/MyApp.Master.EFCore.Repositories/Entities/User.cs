@@ -7,4 +7,7 @@ internal class User
     public string LastName { get; set; }
     public string Email { get; set; }
     public string PasswordHash { get; set; }
+    public string OrganizationId { get; set; }
+
+    public Organization Organization { get; set; }
 }

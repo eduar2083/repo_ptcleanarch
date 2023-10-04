@@ -2,8 +2,8 @@
 {
     public static void Map(WebApplication app)
     {
-        app.MapGroup(MyAppMetadata.Group)
-        .MapPost(MyAppMetadata.User_Register, Register)
+        app.MapGroup(MasterMetadata.Group)
+        .MapPost(MasterMetadata.User_Register, Register)
         .Produces(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status500InternalServerError)
         .WithMetadata(new SwaggerOperationAttribute(summary: "Registra un usuario", description: "Registrar un usuario en el medio de persistencia."))

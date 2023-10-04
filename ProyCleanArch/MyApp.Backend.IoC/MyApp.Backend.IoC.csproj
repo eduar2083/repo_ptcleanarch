@@ -9,7 +9,8 @@
   <ItemGroup>
     <ProjectReference Include="..\CustomExceptions.HandlerMiddleware\CustomExceptions.HandlerMiddleware.csproj" />
     <ProjectReference Include="..\MyApp.Controllers\MyApp.Controllers.csproj" />
-    <ProjectReference Include="..\MyApp.EFCore.Repositories\MyApp.EFCore.Repositories.csproj" />
+    <ProjectReference Include="..\MyApp.Cross.EFCore.Repositories\MyApp.Cross.EFCore.Repositories.csproj" />
+    <ProjectReference Include="..\MyApp.Master.EFCore.Repositories\MyApp.Master.EFCore.Repositories.csproj" />
     <ProjectReference Include="..\MyApp.Presenters\MyApp.Presenters.csproj" />
     <ProjectReference Include="..\MyApp.Services\MyApp.Services.csproj" />
     <ProjectReference Include="..\MyApp.Shared.Validators\MyApp.Shared.Validators.csproj" />

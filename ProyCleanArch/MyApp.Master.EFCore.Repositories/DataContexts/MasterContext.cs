@@ -1,17 +1,17 @@
 ﻿namespace MyApp.EFCore.Repositories.DataContexts;
 
-internal class OrganizationContext : DbContext
+internal sealed class MasterContext : DbContext
 {
-    private readonly OrganizationConnectionStringsOptions ConnectionStringsOptions;
+    private readonly MasterConnectionStringsOptions ConnectionStringsOptions;
 
-    public OrganizationContext(IOptions<OrganizationConnectionStringsOptions> connectionStringsOptions)
+    public MasterContext(IOptions<MasterConnectionStringsOptions> options)
     {
-        ConnectionStringsOptions = connectionStringsOptions.Value;
+        ConnectionStringsOptions = options.Value;
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(ConnectionStringsOptions.OrganizationDb);
+        optionsBuilder.UseSqlServer(ConnectionStringsOptions.MasterDb);
     }
 
     protected override void OnModelCreating(ModelBuilder builder)

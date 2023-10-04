@@ -1,7 +1,7 @@
 ﻿namespace MyApp.Backend.BussinessObjects.Options;
 
-public class OrganizationConnectionStringsOptions
+public class CrossConnectionStringsOptions
 {
     public const string SectionKey = "ConnectionStrings";
-    public string OrganizationDb { get; set; }
+    public string CrossDb { get; set; }
 }

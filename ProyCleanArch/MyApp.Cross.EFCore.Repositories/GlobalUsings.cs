@@ -1,0 +1,11 @@
+global using CustomExceptions;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.Options;
+global using MyApp.Backend.BussinessObjects.Interfaces.Repositories;
+global using MyApp.Backend.BussinessObjects.Options;
+global using MyApp.Cross.EFCore.Repositories;
+global using MyApp.Cross.EFCore.Repositories.DataContexts;
+global using MyApp.Cross.EFCore.Repositories.Entities;
+global using MyApp.Cross.EFCore.Repositories.Mappers;
+global using MyApp.Shared.BusinessObjects.Dtos;
+global using System.Reflection;

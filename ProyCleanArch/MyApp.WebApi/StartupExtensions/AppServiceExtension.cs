@@ -4,16 +4,17 @@ public static class AppServiceExtension
 {
     public static WebApplicationBuilder AddServices(this WebApplicationBuilder builder)
     {
-        Action<OrganizationConnectionStringsOptions> OrganizationConnectionStringOptionsConfigurator = options =>
-        builder.Configuration.GetSection(OrganizationConnectionStringsOptions.SectionKey).Bind(options);
+        Action<MasterConnectionStringsOptions> MasterConnectionStringOptionsConfigurator = options =>
+        builder.Configuration.GetSection(MasterConnectionStringsOptions.SectionKey).Bind(options);
 
-        Action<ProductConnectionStringsOptions> ProductConnectionStringOptionsConfigurator = options =>
-        builder.Configuration.GetSection(ProductConnectionStringsOptions.SectionKey).Bind(options);
+        Action<CrossConnectionStringsOptions> CrossConnectionStringOptionsConfigurator = options =>
+        builder.Configuration.GetSection(CrossConnectionStringsOptions.SectionKey).Bind(options);
 
         Action<JwtOptions> JwtOptionsConfigurator = options =>
         builder.Configuration.GetSection(JwtOptions.SectionKey).Bind(options);
 
-        builder.Services.AddMyAppBackendServices(OrganizationConnectionStringOptionsConfigurator,
+        builder.Services.AddMyAppBackendServices(MasterConnectionStringOptionsConfigurator,
+            CrossConnectionStringOptionsConfigurator,
             JwtOptionsConfigurator);
 
         return builder;

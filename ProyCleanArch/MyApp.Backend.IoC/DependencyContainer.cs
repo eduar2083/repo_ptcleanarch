@@ -3,11 +3,13 @@
 public static class DependencyContainer
 {
     public static IServiceCollection AddMyAppBackendServices(this IServiceCollection services,
-        Action<OrganizationConnectionStringsOptions> organizationConnectionStringConfigurator,
+        Action<MasterConnectionStringsOptions> masterConnectionStringConfigurator,
+        Action<CrossConnectionStringsOptions> crossConnectionstringConfigurator,
         Action<JwtOptions> jwtOptionsConfigurator)
     {
         services.AddSecurityServices(jwtOptionsConfigurator)
-            .AddRepositoryServices(organizationConnectionStringConfigurator)
+            .AddMasterRepositoryServices(masterConnectionStringConfigurator)
+            .AddCrossRepositoryServices(crossConnectionstringConfigurator)
             .AddValidationServices()
             .AddUseCaseServices()
             .AddPresenterServices();

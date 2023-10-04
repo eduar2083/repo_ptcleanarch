@@ -2,10 +2,10 @@
 
 internal sealed class UserRepository : IUserRepository
 {
-    private readonly OrganizationContext Context;
+    private readonly MasterContext Context;
     private readonly IPasswordHasher PasswordHasher;
 
-    public UserRepository(OrganizationContext context, IPasswordHasher passwordHasher)
+    public UserRepository(MasterContext context, IPasswordHasher passwordHasher)
     {
         Context = context;
         PasswordHasher = passwordHasher;
