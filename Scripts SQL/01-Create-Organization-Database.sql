@@ -1,9 +1,9 @@
 USE master
 GO
 
-IF DB_ID('Company') IS NULL
-	CREATE DATABASE Company
+IF DB_ID('Organization') IS NULL
+	CREATE DATABASE Organization
 GO
 
-USE Company
+USE Organization
 GO

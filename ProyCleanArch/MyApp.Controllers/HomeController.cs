@@ -1,4 +1,4 @@
-﻿namespace MyApp.Controllers.Home;
+﻿namespace MyApp.Controllers;
 
 internal sealed class HomeController
 {

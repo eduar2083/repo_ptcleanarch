@@ -10,6 +10,7 @@
     <ProjectReference Include="..\CustomExceptions.HandlerMiddleware\CustomExceptions.HandlerMiddleware.csproj" />
     <ProjectReference Include="..\MyApp.Controllers\MyApp.Controllers.csproj" />
     <ProjectReference Include="..\MyApp.EFCore.Repositories\MyApp.EFCore.Repositories.csproj" />
+    <ProjectReference Include="..\MyApp.Shared.Validators\MyApp.Shared.Validators.csproj" />
     <ProjectReference Include="..\MyApp.UseCases\MyApp.UseCases.csproj" />
   </ItemGroup>
 

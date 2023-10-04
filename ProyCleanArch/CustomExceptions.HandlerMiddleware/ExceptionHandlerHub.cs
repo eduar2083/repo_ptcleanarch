@@ -11,7 +11,7 @@ public static class ExceptionHandlerHub
             var HandlerTypes = Assembly.GetTypes()
             .Where(t => t.Name.EndsWith("ExceptionHandler") &&
             t.GetMethods().Any(m => m.Name == "Handle" &&
-            m.GetParameters().Length == 2));
+            m.GetParameters().Length == 1));
 
             foreach (var Item in HandlerTypes)
             {

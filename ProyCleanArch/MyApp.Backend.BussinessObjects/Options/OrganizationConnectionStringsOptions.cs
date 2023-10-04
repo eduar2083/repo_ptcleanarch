@@ -1,7 +1,7 @@
 ﻿namespace MyApp.Backend.BussinessObjects.Options;
 
-public class CompanyConnectionStringsOptions
+public class OrganizationConnectionStringsOptions
 {
     public const string SectionKey = "ConnectionStrings";
-    public string CompanyDb { get; set; }
+    public string OrganizationDb { get; set; }
 }
