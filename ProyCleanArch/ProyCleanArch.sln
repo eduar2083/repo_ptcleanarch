@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{034DE4FB-D60B-41D3-8E64-074D9D7296E4}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{AB572923-2162-4954-BD87-04E76B30D6A9}"
@@ -80,7 +81,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership.ExceptionHandler
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership.UserManagerService.AspNetIdentity", "Membership.UserManagerService.AspNetIdentity\Membership.UserManagerService.AspNetIdentity.csproj", "{F04411DA-2892-4D04-8E1B-7B748C74081E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Membership.IoC", "Membership.IoC\Membership.IoC.csproj", "{1EB93582-6C0E-41F9-9E8C-02CFBDB2C72A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Membership.IoC", "Membership.IoC\Membership.IoC.csproj", "{1EB93582-6C0E-41F9-9E8C-02CFBDB2C72A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

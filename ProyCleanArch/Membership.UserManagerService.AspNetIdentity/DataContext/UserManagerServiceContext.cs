@@ -3,6 +3,7 @@
 internal class UserManagerServiceContext : IdentityDbContext<User>
 {
     readonly AspNetIdentityOptions Options;
+
     public UserManagerServiceContext(IOptions<AspNetIdentityOptions> options)
     {
         Options = options.Value;
@@ -12,5 +13,14 @@ internal class UserManagerServiceContext : IdentityDbContext<User>
     {
         optionsBuilder.UseSqlServer(Options.MembershipDb);
         base.OnConfiguring(optionsBuilder);
+    }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+
+        builder.HasDefaultSchema("membership");
+
+        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 }
