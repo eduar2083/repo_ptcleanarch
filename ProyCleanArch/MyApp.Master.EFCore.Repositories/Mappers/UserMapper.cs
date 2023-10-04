@@ -13,5 +13,5 @@ internal static class UserMapper
         };
 
     public static UserDto ToUserDto(this User user) =>
-        new UserDto(user.Id, user.Email, user.FirstName, user.LastName, user.PasswordHash);
+        new UserDto(user.Id, user.Email, user.FirstName, user.LastName, user.PasswordHash, user.OrganizationId);
 }

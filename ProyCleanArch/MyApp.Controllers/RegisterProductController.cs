@@ -9,6 +9,7 @@ internal sealed class RegisterProductController
         .MapPost(CrossMetadata.Product_Register, Register)
         .Produces(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status500InternalServerError)
+        .RequireAuthorization()
         .WithMetadata(new SwaggerOperationAttribute(summary: "Registra un producto", description: "Registrar un producto en el medio de persistencia."))
         .WithTags("Cross");
     }

@@ -33,6 +33,11 @@ internal sealed class LoginInteractor : ILoginInputPort
             FoundUser = User;
         }
 
+        if (FoundUser == default)
+        {
+            throw new LoginUserException();
+        }
+
         await OutputPort.HandleUserEntityAsync(FoundUser);
     }
 }

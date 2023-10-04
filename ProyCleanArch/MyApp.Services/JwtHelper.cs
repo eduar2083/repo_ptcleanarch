@@ -9,7 +9,8 @@ internal static class JwtHelper
             new Claim(ClaimTypes.NameIdentifier, user.Id),
             new Claim(ClaimTypes.Name, user.Email),  // Este claim lo utilizan los esquemas de autenticación para identificar al usuario
             new Claim(ClaimTypes.Email, user.Email),
-            new Claim("FullName", user.FullName),
+            new Claim("fullName", user.FullName),
+            new Claim("slugTenant", user.OrganizationId),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N"))
         };
 
@@ -26,8 +27,6 @@ internal static class JwtHelper
 
     public static string GetAccessToken(JwtOptions options, List<Claim> userClaims)
     {
-        userClaims = userClaims.Where(t => t.Type != "aud").ToList();
-
         SigningCredentials SigningCredentials = GetSigningCredentials(options);
         JwtSecurityToken JwtSecurityToken = GetTokenOptions(options, SigningCredentials, userClaims);
 
