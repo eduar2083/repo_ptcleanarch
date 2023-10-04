@@ -2,7 +2,7 @@
 
 public class MyAppMetadata
 {
-    public const string Group = "/myapp";
+    public const string Group = "/master";
 
     public const string User_Register = "/user/register";
     public const string Account_Login = "/account/login";

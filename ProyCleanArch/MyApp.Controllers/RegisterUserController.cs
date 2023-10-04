@@ -7,7 +7,7 @@
         .Produces(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status500InternalServerError)
         .WithMetadata(new SwaggerOperationAttribute(summary: "Registra un usuario", description: "Registrar un usuario en el medio de persistencia."))
-        .WithTags("User");
+        .WithTags("Master");
     }
 
     private static async Task<IResult> Register(RegisterUserDto newUser, IRegisterUserInputPort inputPort)

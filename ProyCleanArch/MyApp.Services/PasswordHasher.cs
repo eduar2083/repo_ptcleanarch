@@ -1,4 +1,4 @@
-﻿namespace MyApp.Backend.BussinessObjects.Services;
+﻿namespace MyApp.Services;
 
 internal sealed class PasswordHasher : IPasswordHasher
 {

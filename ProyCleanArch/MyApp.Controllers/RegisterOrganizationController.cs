@@ -9,7 +9,7 @@ internal sealed class RegisterOrganizationController
         .Produces(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status500InternalServerError)
         .WithMetadata(new SwaggerOperationAttribute(summary: "Registra una organización", description: "Registrar una organización en el medio de persistencia."))
-        .WithTags("Organization");
+        .WithTags("Master");
     }
 
     private static async Task<IResult> Register(RegisterOrganizationDto newOrganization, IRegisterOrganizationInputPort inputPort)

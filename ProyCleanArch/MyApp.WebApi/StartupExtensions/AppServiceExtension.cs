@@ -10,10 +10,11 @@ public static class AppServiceExtension
         Action<ProductConnectionStringsOptions> ProductConnectionStringOptionsConfigurator = options =>
         builder.Configuration.GetSection(ProductConnectionStringsOptions.SectionKey).Bind(options);
 
-        //Action<JwtOptions> JwtOptionsConfigurator = options =>
-        //builder.Configuration.GetSection(JwtOptions.SectionKey).Bind(options);
+        Action<JwtOptions> JwtOptionsConfigurator = options =>
+        builder.Configuration.GetSection(JwtOptions.SectionKey).Bind(options);
 
-        builder.Services.AddMyAppBackendServices(OrganizationConnectionStringOptionsConfigurator);
+        builder.Services.AddMyAppBackendServices(OrganizationConnectionStringOptionsConfigurator,
+            JwtOptionsConfigurator);
 
         return builder;
     }
