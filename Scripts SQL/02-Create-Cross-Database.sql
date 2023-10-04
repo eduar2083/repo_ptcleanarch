@@ -1,0 +1,9 @@
+USE master
+GO
+
+IF DB_ID('CrossDb') IS NULL
+	CREATE DATABASE CrossDb
+GO
+
+USE CrossDb
+GO
