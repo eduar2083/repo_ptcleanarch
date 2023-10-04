@@ -9,6 +9,7 @@ public static class DependencyContainer
         services.AddDbContext<OrganizationContext>();
 
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IOrganizationRepository, OrganizationRepository>();
 
         return services;
     }

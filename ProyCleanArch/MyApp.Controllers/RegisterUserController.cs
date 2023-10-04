@@ -12,8 +12,8 @@
 
     private static async Task<IResult> Register(RegisterUserDto newUser, IRegisterUserInputPort inputPort)
     {
-        await inputPort.Register(newUser);
+        var Id = await inputPort.Register(newUser);
 
-        return Results.Ok();
+        return Results.Ok(Id);
     }
 }

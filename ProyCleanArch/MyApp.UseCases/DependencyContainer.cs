@@ -5,6 +5,7 @@ public static class DependencyContainer
     public static IServiceCollection AddUseCaseServices(this IServiceCollection services)
     {
         services.AddScoped<IRegisterUserInputPort, RegisterUserInteractor>();
+        services.AddScoped<IRegisterOrganizationInputPort, RegisterOganizationInteractor>();
 
         return services;
     }

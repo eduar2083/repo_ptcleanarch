@@ -1,0 +1,29 @@
+﻿namespace MyApp.EFCore.Repositories;
+
+internal sealed class OrganizationRepository : IOrganizationRepository
+{
+    private readonly OrganizationContext Context;
+
+    public OrganizationRepository(OrganizationContext context)
+    {
+        Context = context;
+    }
+
+    public async Task<string> RegisterAsync(RegisterOrganizationDto organization)
+    {
+        var NewOrganization = organization.ToOrganization();
+        NewOrganization.Id = Guid.NewGuid().ToString();
+        Context.Add(NewOrganization);
+
+        try
+        {
+            await Context.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            throw new PersistenceException(ex.Message, ex.InnerException ?? ex);
+        }
+
+        return NewOrganization.Id;
+    }
+}

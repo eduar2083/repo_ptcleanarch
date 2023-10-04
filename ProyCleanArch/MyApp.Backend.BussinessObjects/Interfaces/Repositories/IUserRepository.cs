@@ -1,4 +1,4 @@
-﻿namespace MyApp.Backend.BussinessObjects.Interfaces.Services;
+﻿namespace MyApp.Backend.BussinessObjects.Interfaces.Repositories;
 
 public interface IUserRepository
 {
