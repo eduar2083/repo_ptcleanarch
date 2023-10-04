@@ -1,5 +1,4 @@
-﻿global using Core.Entities.ValueObjects;
-global using CustomExceptions.HandlerMiddleware;
+﻿global using CustomExceptions.HandlerMiddleware;
 global using CustomExceptions.HandlerMiddleware.Extensions;
 global using Microsoft.AspNetCore.Builder;
 global using Microsoft.AspNetCore.Diagnostics;

@@ -1,4 +1,4 @@
-﻿namespace Core.Entities.Interfaces;
+﻿namespace MyApp.Backend.BussinessObjects.Interfaces.Services;
 
 public interface IPasswordHasher
 {

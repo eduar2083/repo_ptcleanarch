@@ -1,4 +1,3 @@
-global using Core.Entities.Interfaces;
 global using Microsoft.AspNetCore.Http;
 global using Microsoft.Extensions.Options;
 global using Microsoft.IdentityModel.Tokens;

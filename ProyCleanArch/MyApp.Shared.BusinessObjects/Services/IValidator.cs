@@ -1,4 +1,4 @@
-﻿namespace Core.Entities.Interfaces;
+﻿namespace MyApp.Shared.BusinessObjects.Services;
 
 public interface IValidator<T>
 {

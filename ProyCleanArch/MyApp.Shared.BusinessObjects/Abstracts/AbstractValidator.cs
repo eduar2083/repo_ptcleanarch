@@ -1,4 +1,4 @@
-﻿namespace Core.Entities.Abstracts;
+﻿namespace MyApp.Shared.BusinessObjects.Abstracts;
 
 public abstract class AbstractValidator<T> : IValidator<T>
 {

@@ -1,4 +1,4 @@
-﻿namespace Core.Entities.ValueObjects;
+﻿namespace CustomExceptions;
 
 public class DomainError
 {
