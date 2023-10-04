@@ -12,7 +12,6 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Membership.IoC\Membership.IoC.csproj" />
     <ProjectReference Include="..\MyApp.Backend.IoC\MyApp.Backend.IoC.csproj" />
   </ItemGroup>
 

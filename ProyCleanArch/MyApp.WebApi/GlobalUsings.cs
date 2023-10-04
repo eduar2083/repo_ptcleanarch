@@ -1,7 +1,4 @@
 global using CustomExceptions.HandlerMiddleware;
-global using Membership.Abstractions.Options;
-global using Membership.IoC;
-global using Membership.UserManagerService.AspNetIdentity.Options;
 global using Microsoft.AspNetCore.Authentication.JwtBearer;
 global using Microsoft.IdentityModel.Tokens;
 global using Microsoft.OpenApi.Models;

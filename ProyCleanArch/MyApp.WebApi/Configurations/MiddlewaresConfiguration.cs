@@ -24,7 +24,6 @@ public static class MiddlewaresConfiguration
 
         // Endpoints
         app.UseMyAppControllers();
-        app.UseMembershipEndpoints();
 
         // Response Headers Middleware
 

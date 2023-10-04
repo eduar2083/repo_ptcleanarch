@@ -10,16 +10,8 @@ public static class AppServiceExtension
         Action<ProductConnectionStringsOptions> ProductConnectionStringOptionsConfigurator = options =>
         builder.Configuration.GetSection(ProductConnectionStringsOptions.SectionKey).Bind(options);
 
-        Action<AspNetIdentityOptions> AspNetIdentityOptionsConfigurator = options =>
-        builder.Configuration.GetSection(AspNetIdentityOptions.SectionKey).Bind(options);
-
-        Action<JwtOptions> JwtOptionsConfigurator = options =>
-        builder.Configuration.GetSection(JwtOptions.SectionKey).Bind(options);
-
-        // Membership Services
-        builder.Services
-            .AddMembershipServices(JwtOptionsConfigurator)
-            .AddMembershipExtensionServices(AspNetIdentityOptionsConfigurator);
+        //Action<JwtOptions> JwtOptionsConfigurator = options =>
+        //builder.Configuration.GetSection(JwtOptions.SectionKey).Bind(options);
 
         return builder;
     }
