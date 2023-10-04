@@ -46,6 +46,10 @@ internal sealed class RegisterUserValidator : AbstractValidator<RegisterUserDto>
                     ValidateRule(() => entity.Password == entity.ConfirmPassword, propertyName, "La contraseña y su confirmación no coinciden", errors);
                 }
                 break;
+
+            case nameof(RegisterUserDto.OrganizationId):
+                ValidateRule(() => !string.IsNullOrWhiteSpace(entity.OrganizationId), propertyName, "El Id de Organización es requerido", errors);
+                break;
         }
     }
 }

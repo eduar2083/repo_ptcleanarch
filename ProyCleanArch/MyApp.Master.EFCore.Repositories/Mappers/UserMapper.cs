@@ -8,7 +8,8 @@ internal static class UserMapper
             FirstName = newUser.FirstName,
             LastName = newUser.LastName,
             Email = newUser.Email,
-            PasswordHash = passwordHasher.Hash(newUser.Password)
+            PasswordHash = passwordHasher.Hash(newUser.Password),
+            OrganizationId = newUser.OrganizationId
         };
 
     public static UserDto ToUserDto(this User user) =>
