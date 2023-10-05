@@ -2,5 +2,5 @@
 
 public interface IDeleteProductInputPort
 {
-    Task<bool> DeleteProductAsync(int id);
+    Task<bool> DeleteAsync(int id);
 }

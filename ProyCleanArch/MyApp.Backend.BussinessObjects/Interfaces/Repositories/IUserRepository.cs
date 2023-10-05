@@ -4,5 +4,5 @@ public interface IUserRepository
 {
     Task<string> RegisterAsync(RegisterUserDto user);
 
-    Task<UserDto> GetByUserName(string userName);
+    Task<UserDto> GetByUserNameAsync(string userName);
 }

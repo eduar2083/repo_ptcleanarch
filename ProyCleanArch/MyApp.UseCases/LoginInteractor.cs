@@ -27,7 +27,7 @@ internal sealed class LoginInteractor : ILoginInputPort
         }
 
         UserDto FoundUser = default;
-        var User = await UserRepository.GetByUserName(userCredentials.UserName);
+        var User = await UserRepository.GetByUserNameAsync(userCredentials.UserName);
         if (User != null && PasswordHasher.Check(User.PasswordHash, userCredentials.Password))
         {
             FoundUser = User;

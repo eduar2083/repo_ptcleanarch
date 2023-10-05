@@ -3,6 +3,6 @@
 public interface IOrganizationRepository
 {
     Task<string> RegisterAsync(RegisterOrganizationDto organization);
-    Task<IEnumerable<OrganizationDto>> GetAllAsync();
+    Task<IEnumerable<OrganizationDto>> ListAsync();
     Task<OrganizationDto> GetByIdAsync(string id);
 }

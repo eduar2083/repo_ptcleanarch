@@ -9,8 +9,8 @@ internal sealed class ListProductsInteractor : IListProductsInputPort
         ProductRepository = productRepository;
     }
 
-    public async Task<List<ProductDto>> ListProductsAsync()
+    public async Task<List<ProductDto>> ListAsync()
     {
-        return await ProductRepository.ListAsnc();
+        return await ProductRepository.ListAsync();
     }
 }

@@ -16,7 +16,7 @@ internal sealed class GetProductsController
 
     private static async Task<IResult> List([FromQuery] string slugTenant, IListProductsInputPort inputPort)
     {
-        var Products = await inputPort.ListProductsAsync();
+        var Products = await inputPort.ListAsync();
 
         return Results.Ok(Products);
     }

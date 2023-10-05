@@ -9,7 +9,7 @@ internal sealed class DeleteProductInteractor : IDeleteProductInputPort
         ProductRepository = productRepository;
     }
 
-    public async Task<bool> DeleteProductAsync(int id)
+    public async Task<bool> DeleteAsync(int id)
     {
         var Product = await ProductRepository.GetByIdAsync(id);
         if (Product == null)

@@ -29,7 +29,7 @@ internal sealed class UserRepository : IUserRepository
         return NewUser.Id;
     }
 
-    public async Task<UserDto> GetByUserName(string userName)
+    public async Task<UserDto> GetByUserNameAsync(string userName)
     {
         try
         {

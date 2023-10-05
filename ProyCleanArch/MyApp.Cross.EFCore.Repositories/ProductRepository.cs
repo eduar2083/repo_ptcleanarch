@@ -47,7 +47,7 @@ internal sealed class ProductRepository : IProductRepository
         }
     }
 
-    public async Task<List<ProductDto>> ListAsnc()
+    public async Task<List<ProductDto>> ListAsync()
     {
         return await Context.Products
             .AsNoTracking()

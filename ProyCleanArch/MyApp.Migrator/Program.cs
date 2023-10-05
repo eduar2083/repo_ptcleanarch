@@ -7,7 +7,7 @@ using IHost MyHost = Host.CreateApplicationBuilder(args)
     .ConfigureConsoleServices();
 
 var OrganizationRepository = MyHost.Services.GetRequiredService<IOrganizationRepository>();
-var Organizations = await OrganizationRepository.GetAllAsync();
+var Organizations = await OrganizationRepository.ListAsync();
 var Tenants = Organizations.Select(o => new MigratorTenantInfo
 {
     TenantId = o.Id,

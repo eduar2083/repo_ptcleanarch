@@ -17,7 +17,7 @@ internal sealed class DeleteProductController
 
     private static async Task<IResult> Delete(int id, [FromQuery] string slugTenant, IDeleteProductInputPort inputPort)
     {
-        bool Success = await inputPort.DeleteProductAsync(id);
+        bool Success = await inputPort.DeleteAsync(id);
 
         return Results.Ok(Success);
     }

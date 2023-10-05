@@ -2,5 +2,5 @@
 
 public interface IListProductsInputPort
 {
-    Task<List<ProductDto>> ListProductsAsync();
+    Task<List<ProductDto>> ListAsync();
 }

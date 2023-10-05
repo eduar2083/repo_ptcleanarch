@@ -27,7 +27,7 @@ internal sealed class OrganizationRepository : IOrganizationRepository
         return NewOrganization.Id;
     }
 
-    public async Task<IEnumerable<OrganizationDto>> GetAllAsync()
+    public async Task<IEnumerable<OrganizationDto>> ListAsync()
     {
         return await Context.Organizations
             .Select(o => o.ToOrganizationDto())
