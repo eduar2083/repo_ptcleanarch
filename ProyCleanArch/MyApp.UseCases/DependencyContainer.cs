@@ -9,6 +9,7 @@ public static class DependencyContainer
         services.AddScoped<ILoginInputPort, LoginInteractor>();
         services.AddScoped<IRegisterProductInputPort, RegisterProductInteractor>();
         services.AddScoped<IGetProductByIdInputPort, GetProductByIdInteractor>();
+        services.AddScoped<IListProductsInputPort, ListProductsInteractor>();
 
         return services;
     }

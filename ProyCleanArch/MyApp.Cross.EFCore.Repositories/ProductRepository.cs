@@ -45,4 +45,11 @@ internal sealed class ProductRepository : IProductRepository
             throw new RetrieveDataException();
         }
     }
+
+    public async Task<List<ProductDto>> ListAsnc()
+    {
+        return await Context.Products
+            .Select(p => p.ToProductDto())
+            .ToListAsync();
+    }
 }
