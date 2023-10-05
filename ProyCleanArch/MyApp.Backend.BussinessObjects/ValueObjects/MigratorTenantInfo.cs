@@ -3,5 +3,4 @@
 public sealed class MigratorTenantInfo
 {
     public string TenantId { get; set; }
-    public string ConnectionString { get; set; }
 }

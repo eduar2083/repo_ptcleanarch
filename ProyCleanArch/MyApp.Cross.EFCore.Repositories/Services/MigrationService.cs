@@ -2,17 +2,17 @@
 
 internal sealed class MigrationService : IMigrationService
 {
-    public string BuildConnectionString(string connectionStringTemplate, string databaaseName)
-    {
-        var ConnectionStringBuilder = new SqlConnectionStringBuilder(connectionStringTemplate);
-        ConnectionStringBuilder.InitialCatalog = databaaseName;
+    private readonly CrossConnectionStringOptions CrossConnectionStringOptions;
 
-        return ConnectionStringBuilder.ConnectionString;
+    public MigrationService(IOptions<CrossConnectionStringOptions> options)
+    {
+        CrossConnectionStringOptions = options.Value;
     }
 
     public async Task ApplyMigration(MigratorTenantInfo tenant)
     {
-        DbContextOptions DbContextOptions = CreateDefaultDbContextOptions(tenant.ConnectionString);
+        var ConnectionString = BuildConnectionString(CrossConnectionStringOptions.CrossDb, tenant.TenantId);
+        DbContextOptions DbContextOptions = CreateDefaultDbContextOptions(ConnectionString);
         try
         {
             using var Context = new CrossContext(DbContextOptions);
@@ -28,4 +28,14 @@ internal sealed class MigrationService : IMigrationService
     new DbContextOptionsBuilder()
         .UseSqlServer(connectionString)
         .Options;
+
+    #region Helper
+    private string BuildConnectionString(string connectionStringTemplate, string databaseName)
+    {
+        var ConnectionStringBuilder = new SqlConnectionStringBuilder(connectionStringTemplate);
+        ConnectionStringBuilder.InitialCatalog = databaseName;
+
+        return ConnectionStringBuilder.ConnectionString;
+    }
+    #endregion
 }

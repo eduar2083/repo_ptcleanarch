@@ -5,7 +5,6 @@ internal sealed class RegisterOganizationInteractor : IRegisterOrganizationInput
     private readonly IValidator<RegisterOrganizationDto> Validator;
     private readonly IOrganizationRepository OrganizationRepository;
     private readonly IMigrationService MigrationService;
-    private readonly CrossConnectionStringOptions CrossConnectionStringOptions;
 
     public RegisterOganizationInteractor(IValidator<RegisterOrganizationDto> validator,
         IOrganizationRepository organizationRepository,
@@ -15,7 +14,6 @@ internal sealed class RegisterOganizationInteractor : IRegisterOrganizationInput
         Validator = validator;
         OrganizationRepository = organizationRepository;
         MigrationService = migrationService;
-        CrossConnectionStringOptions = options.Value;
     }
 
     public async Task<string> RegisterAsync(RegisterOrganizationDto organization)
@@ -28,12 +26,9 @@ internal sealed class RegisterOganizationInteractor : IRegisterOrganizationInput
 
         var OrganizationId = await OrganizationRepository.RegisterAsync(organization);
 
-        string TenantId = $"{organization.Name}-{OrganizationId}";
         await MigrationService.ApplyMigration(new MigratorTenantInfo
         {
-            TenantId = TenantId,
-            ConnectionString = MigrationService.BuildConnectionString(
-                CrossConnectionStringOptions.CrossDb, TenantId)
+            TenantId = $"{organization.Name}-{OrganizationId}"
         });
 
         return OrganizationId;

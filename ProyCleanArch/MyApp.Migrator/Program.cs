@@ -10,8 +10,7 @@ var OrganizationRepository = MyHost.Services.GetRequiredService<IOrganizationRep
 var Organizations = await OrganizationRepository.ListAsync();
 var Tenants = Organizations.Select(o => new MigratorTenantInfo
 {
-    TenantId = o.Id,
-    ConnectionString = string.Format("Server=(localdb)\\mssqllocaldb; Database={0}-{1}; Application Name=MyApp", o.Name, o.Id)
+    TenantId = string.Format("Server=(localdb)\\mssqllocaldb; Database={0}-{1}; Application Name=MyApp", o.Name, o.Id)
 });
 IEnumerable<Task> Tasks = Tenants.Select(t => MigrateTenantDatabase(t));
 try
@@ -31,7 +30,7 @@ return (int)ExitCode.Success;
 async Task MigrateTenantDatabase(MigratorTenantInfo tenant)
 {
     using var LogCtx = LogContext.PushProperty("TenantId", $"({tenant.TenantId}) ");
-    DbContextOptions DbContextOptions = CreateDefaultDbContextOptions(tenant.ConnectionString);
+    DbContextOptions DbContextOptions = CreateDefaultDbContextOptions(tenant.TenantId);
     try
     {
         using var Context = new CrossContext(DbContextOptions);
