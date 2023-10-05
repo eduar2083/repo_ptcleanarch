@@ -8,4 +8,5 @@ public class CrossMetadata
     public const string Product_Update = "/products/update";
     public const string Product_Get = "/products/{id:int}";
     public const string Product_List = "/products/list";
+    public const string Product_Delete = "/products/{id:int}/delete";
 }

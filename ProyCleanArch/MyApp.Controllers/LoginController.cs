@@ -19,7 +19,7 @@ internal sealed class LoginController
         ILoginOutputPort outputPort)
     {
         context.Response.Headers.Add("Cache-Control", "no-store");
-        await inputPort.Login(credentials);
+        await inputPort.LoginAsync(credentials);
 
         return Results.Ok(outputPort.Tokens);
     }

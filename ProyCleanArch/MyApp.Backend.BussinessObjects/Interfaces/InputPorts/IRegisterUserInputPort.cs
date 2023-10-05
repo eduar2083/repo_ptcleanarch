@@ -2,5 +2,5 @@
 
 public interface IRegisterUserInputPort
 {
-    Task<string> Register(RegisterUserDto user);
+    Task<string> RegisterAsync(RegisterUserDto user);
 }

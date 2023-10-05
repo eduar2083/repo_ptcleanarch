@@ -2,5 +2,5 @@
 
 public interface IRegisterOrganizationInputPort
 {
-    Task<string> Register(RegisterOrganizationDto organization);
+    Task<string> RegisterAsync(RegisterOrganizationDto organization);
 }

@@ -36,6 +36,7 @@ internal sealed class ProductRepository : IProductRepository
         try
         {
             return await Context.Products
+                .AsNoTracking()
                 .Where(p => p.Id == id)
                 .Select(p => p.ToProductDto())
                 .FirstOrDefaultAsync();
@@ -49,7 +50,16 @@ internal sealed class ProductRepository : IProductRepository
     public async Task<List<ProductDto>> ListAsnc()
     {
         return await Context.Products
+            .AsNoTracking()
             .Select(p => p.ToProductDto())
             .ToListAsync();
+    }
+
+    public async Task<bool> DeleteAsync(int id)
+    {
+        var Product = await Context.Products.FindAsync(id);
+        Context.Remove(Product);
+
+        return await Context.SaveChangesAsync() > 0;
     }
 }

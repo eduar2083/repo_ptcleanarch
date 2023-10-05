@@ -2,5 +2,5 @@
 
 public interface IRegisterProductInputPort
 {
-    Task<int> Register(RegisterProductDto product);
+    Task<int> RegisterAsync(RegisterProductDto product);
 }

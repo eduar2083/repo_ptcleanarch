@@ -15,7 +15,7 @@ internal sealed class RegisterOrganizationController
 
     private static async Task<IResult> Register(RegisterOrganizationDto newOrganization, IRegisterOrganizationInputPort inputPort)
     {
-        var Id = await inputPort.Register(newOrganization);
+        var Id = await inputPort.RegisterAsync(newOrganization);
 
         return Results.Ok(Id);
     }

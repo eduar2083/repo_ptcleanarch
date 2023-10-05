@@ -2,5 +2,5 @@
 
 public interface ILoginInputPort
 {
-    Task Login(UserCredentialsDto userCredentials);
+    Task LoginAsync(UserCredentialsDto userCredentials);
 }

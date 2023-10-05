@@ -7,6 +7,7 @@ internal sealed class GetProductByIdController
         app.MapGroup(CrossMetadata.Group)
         .MapGet(CrossMetadata.Product_Get, GetById)
         .Produces(StatusCodes.Status200OK)
+        .Produces(StatusCodes.Status404NotFound)
         .Produces(StatusCodes.Status401Unauthorized)
         .Produces(StatusCodes.Status500InternalServerError)
         .RequireAuthorization()

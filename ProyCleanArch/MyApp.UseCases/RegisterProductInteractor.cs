@@ -12,7 +12,7 @@ internal sealed class RegisterProductInteractor : IRegisterProductInputPort
         ProductRepository = productRepository;
     }
 
-    public async Task<int> Register(RegisterProductDto product)
+    public async Task<int> RegisterAsync(RegisterProductDto product)
     {
         var ValidationErrors = Validator.Validate(product);
         if (ValidationErrors != null && ValidationErrors.Any())

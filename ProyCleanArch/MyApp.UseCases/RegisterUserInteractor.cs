@@ -12,7 +12,7 @@ internal sealed class RegisterUserInteractor : IRegisterUserInputPort
         Validator = validator;
     }
 
-    public async Task<string> Register(RegisterUserDto user)
+    public async Task<string> RegisterAsync(RegisterUserDto user)
     {
         var ValidationErrors = Validator.Validate(user);
         if (ValidationErrors != null && ValidationErrors.Any())

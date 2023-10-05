@@ -18,7 +18,7 @@ internal sealed class LoginInteractor : ILoginInputPort
         OutputPort = outputPort;
     }
 
-    public async Task Login(UserCredentialsDto userCredentials)
+    public async Task LoginAsync(UserCredentialsDto userCredentials)
     {
         var ValidationErrors = Validator.Validate(userCredentials);
         if (ValidationErrors != null && ValidationErrors.Any())

@@ -18,7 +18,7 @@ internal sealed class RegisterOganizationInteractor : IRegisterOrganizationInput
         CrossConnectionStringOptions = options.Value;
     }
 
-    public async Task<string> Register(RegisterOrganizationDto organization)
+    public async Task<string> RegisterAsync(RegisterOrganizationDto organization)
     {
         var ValidationErrors = Validator.Validate(organization);
         if (ValidationErrors != null && ValidationErrors.Any())
