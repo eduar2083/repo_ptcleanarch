@@ -7,4 +7,11 @@ internal static class OrganizationMapper
         {
             Name = newOrganization.Name
         };
+
+    public static OrganizationDto ToOrganizationDto(this Organization entity) =>
+        new OrganizationDto
+        {
+            Id = entity.Id,
+            Name = entity.Name
+        };
 }

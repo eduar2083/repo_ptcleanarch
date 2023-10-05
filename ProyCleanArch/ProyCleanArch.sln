@@ -69,7 +69,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Master.EFCore.Reposit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Cross.EFCore.Repositories", "MyApp.Cross.EFCore.Repositories\MyApp.Cross.EFCore.Repositories.csproj", "{B055718D-4191-4129-AFD5-C2B9DB7CC95F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Process", "Process", "{A67180A2-4336-4E54-933F-06F0AC8DCF0D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{A67180A2-4336-4E54-933F-06F0AC8DCF0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Migrator", "MyApp.Migrator\MyApp.Migrator.csproj", "{FC8C597B-7CD0-4894-AF0B-C380A32A68B9}"
 EndProject
