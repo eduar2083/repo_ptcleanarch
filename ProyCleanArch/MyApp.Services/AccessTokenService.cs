@@ -4,7 +4,7 @@ internal sealed class AccessTokenService : IAccessTokenService
 {
     private readonly JwtOptions JwtOptions;
 
-    public AccessTokenService(IOptions<JwtOptions> jwtOptions, IHttpContextAccessor httpContextAccessor)
+    public AccessTokenService(IOptions<JwtOptions> jwtOptions)
     {
         JwtOptions = jwtOptions.Value;
     }

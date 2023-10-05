@@ -8,8 +8,7 @@ internal sealed class RegisterOganizationInteractor : IRegisterOrganizationInput
 
     public RegisterOganizationInteractor(IValidator<RegisterOrganizationDto> validator,
         IOrganizationRepository organizationRepository,
-        IMigrationService migrationService,
-        IOptions<CrossConnectionStringOptions> options)
+        IMigrationService migrationService)
     {
         Validator = validator;
         OrganizationRepository = organizationRepository;
