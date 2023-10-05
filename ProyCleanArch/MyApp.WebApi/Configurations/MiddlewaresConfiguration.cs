@@ -8,11 +8,10 @@ public static class MiddlewaresConfiguration
         app.UseStaticFiles();
 
         // Si nos invocan por Http, redireccionar a Https
-        //app.UseHttpsRedirection();
+        app.UseHttpsRedirection();
 
         // Error Handling
         app.UseCustomExceptionHandler(typeof(ExceptionHandlerHub).Assembly);
-        //app.UseMembershipExceptionHandler();
 
         // Swagger UI
         app.UseCustomizedSwagger();
