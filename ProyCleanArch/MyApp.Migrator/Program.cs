@@ -13,11 +13,11 @@ var Tenants = Organizations.Select(o => new MigratorTenantInfo
     TenantId = o.Id,
     ConnectionString = $"Server=(localdb)\\mssqllocaldb; Database={o.Name}; Application Name=MyApp"
 });
-IEnumerable<Task> tasks = Tenants.Select(t => MigrateTenantDatabase(t));
+IEnumerable<Task> Tasks = Tenants.Select(t => MigrateTenantDatabase(t));
 try
 {
     Logger.Information("Starting parallel execution of pending migrations...");
-    await Task.WhenAll(tasks);
+    await Task.WhenAll(Tasks);
 }
 catch
 {
