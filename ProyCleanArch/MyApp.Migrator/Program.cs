@@ -11,7 +11,7 @@ var Organizations = await OrganizationRepository.ListAsync();
 var Tenants = Organizations.Select(o => new MigratorTenantInfo
 {
     TenantId = o.Id,
-    ConnectionString = $"Server=(localdb)\\mssqllocaldb; Database={o.Name}; Application Name=MyApp"
+    ConnectionString = string.Format("Server=(localdb)\\mssqllocaldb; Database={0}-{1}; Application Name=MyApp", o.Name, o.Id)
 });
 IEnumerable<Task> Tasks = Tenants.Select(t => MigrateTenantDatabase(t));
 try
