@@ -7,6 +7,7 @@ internal sealed class LoginController
         app.MapGroup(MasterMetadata.Group)
         .MapPost(MasterMetadata.Account_Login, Login)
         .Produces(StatusCodes.Status200OK)
+        .Produces(StatusCodes.Status400BadRequest)
         .Produces(StatusCodes.Status500InternalServerError)
         .WithMetadata(new SwaggerOperationAttribute(summary: "Autentica un usuario", description: "Autentica un usuario y devuelve el token de acceso."))
         .WithTags("Master");

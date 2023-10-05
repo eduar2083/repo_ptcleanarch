@@ -7,6 +7,7 @@ internal sealed class RegisterOrganizationController
         app.MapGroup(MasterMetadata.Group)
         .MapPost(MasterMetadata.Organization_Register, Register)
         .Produces(StatusCodes.Status200OK)
+        .Produces(StatusCodes.Status400BadRequest)
         .Produces(StatusCodes.Status500InternalServerError)
         .WithMetadata(new SwaggerOperationAttribute(summary: "Registra una organización", description: "Registrar una organización en el medio de persistencia."))
         .WithTags("Master");

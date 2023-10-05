@@ -4,7 +4,4 @@ GO
 SELECT * FROM [dbo].[Organizations]
 SELECT * FROM [dbo].[Users]
 
-USE CrossDb
-GO
-
-SELECT * FROM [dbo].[Products]
+DELETE [dbo].[Organizations] WHERE Name NOT IN ('Organization 01', 'Organization 02');

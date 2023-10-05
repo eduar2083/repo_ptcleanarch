@@ -30,4 +30,19 @@ internal sealed class ProductRepository : IProductRepository
 
         return NewProduct.Id;
     }
+
+    public async Task<ProductDto> GetByIdAsync(int id)
+    {
+        try
+        {
+            return await Context.Products
+                .Where(p => p.Id == id)
+                .Select(p => p.ToProductDto())
+                .FirstOrDefaultAsync();
+        }
+        catch
+        {
+            throw new RetrieveDataException();
+        }
+    }
 }

@@ -8,4 +8,12 @@ internal static class ProductMapper
             Name = newProduct.Name,
             UnitPrice = newProduct.UnitPrice
         };
+
+    public static ProductDto ToProductDto(this Product entity) =>
+        new ProductDto
+        {
+            Id = entity.Id,
+            Name = entity.Name,
+            UnitPrice = entity.UnitPrice
+        };
 }
