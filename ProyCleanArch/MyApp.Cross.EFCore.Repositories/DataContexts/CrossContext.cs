@@ -1,17 +1,21 @@
 ﻿namespace MyApp.Cross.EFCore.Repositories.DataContexts;
 
-internal sealed class CrossContext : DbContext
+public sealed class CrossContext : DbContext
 {
-    private readonly CrossConnectionStringsOptions ConnectionStringsOptions;
-
-    public CrossContext(IOptions<CrossConnectionStringsOptions> options)
+    public CrossContext(DbContextOptions options)
+        : base(options)
     {
-        ConnectionStringsOptions = options.Value;
+
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(ConnectionStringsOptions.CrossDb);
+        if (optionsBuilder.IsConfigured)
+        {
+            return;
+        }
+
+        throw new ArgumentException("Database has not been configured");
     }
 
     protected override void OnModelCreating(ModelBuilder builder)

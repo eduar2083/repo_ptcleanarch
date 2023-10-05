@@ -1,5 +1,14 @@
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Diagnostics;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Hosting;
+global using Microsoft.Extensions.Logging;
 global using MyApp.Backend.BussinessObjects.Interfaces.Repositories;
 global using MyApp.Backend.BussinessObjects.Options;
+global using MyApp.Cross.EFCore.Repositories.DataContexts;
+global using MyApp.Migrator;
+global using MyApp.Migrator.Console;
+global using Serilog;
+global using Serilog.Context;
+global using ILogger = Serilog.ILogger;

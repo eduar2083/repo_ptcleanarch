@@ -1,3 +1,3 @@
-Create Scripts for Membership
-=============================
-- Ejecutar los Scripts SQL
+- Ejecutar el Script 01-Create-Master-Database.sql para crear la Base de Datos MasterDb
+- Ejecutar el Script 02-Create-Master-Tables.sql para crear las tablas de MasterDb
+- 
