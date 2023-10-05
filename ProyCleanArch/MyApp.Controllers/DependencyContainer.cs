@@ -1,4 +1,4 @@
-﻿namespace MyApp.Controllers;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
 public static class DependencyContainer
 {
