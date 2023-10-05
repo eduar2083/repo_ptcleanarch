@@ -4,15 +4,15 @@ internal sealed class TenantService : ITenantService
 {
     private readonly IHttpContextAccessor HttpContextAccessor;
     private readonly CrossConnectionStringOptions CrossConnectionStringOptions;
-    private readonly IOrganizationRepository OrganizationRepository;
+    private readonly IUserService UserService;
 
     public TenantService(IHttpContextAccessor httpContextAccessor,
         IOptions<CrossConnectionStringOptions> options,
-        IOrganizationRepository organizationRepository)
+        IUserService userService)
     {
         HttpContextAccessor = httpContextAccessor;
         CrossConnectionStringOptions = options.Value;
-        OrganizationRepository = organizationRepository;
+        UserService = userService;
     }
 
     public string GetConnectionString()
@@ -27,7 +27,13 @@ internal sealed class TenantService : ITenantService
     private string GetTenantId()
     {
         var HttpContext = HttpContextAccessor.HttpContext;
-        var TenantId = HttpContext.Request.Query["slugTenant"];
+        var TenantId = HttpContext.Request.Query["slugTenant"].ToString();
+        var OrganizationId = UserService.OrganizationId;
+
+        if (!TenantId.Contains(OrganizationId))
+        {
+            throw new ForbiddenAccessException();
+        }
 
         return TenantId;
     }

@@ -11,6 +11,7 @@ public static class DependencyContainer
 
         services.AddScoped<IPasswordHasher, PasswordHasher>();
         services.AddScoped<IAccessTokenService, AccessTokenService>();
+        services.AddSingleton<IUserService, UserService>();
 
         return services;
     }
