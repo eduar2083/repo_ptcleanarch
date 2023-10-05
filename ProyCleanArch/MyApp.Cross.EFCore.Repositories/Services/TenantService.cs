@@ -15,12 +15,10 @@ internal sealed class TenantService : ITenantService
         OrganizationRepository = organizationRepository;
     }
 
-    public async Task<string> GetConnectionString()
+    public string GetConnectionString()
     {
-        var Organization = await OrganizationRepository.GetByIdAsync(GetTenantId());
-
         var ConnectionStringBuilder = new SqlConnectionStringBuilder(CrossConnectionStringOptions.CrossDb);
-        ConnectionStringBuilder.InitialCatalog = Organization.Name;
+        ConnectionStringBuilder.InitialCatalog = GetTenantId();
 
         return ConnectionStringBuilder.ConnectionString;
     }

@@ -13,10 +13,10 @@ internal sealed class OrganizationRepository : IOrganizationRepository
     {
         var NewOrganization = organization.ToOrganization();
         NewOrganization.Id = Guid.NewGuid().ToString();
-        Context.Add(NewOrganization);
 
         try
         {
+            Context.Add(NewOrganization);
             await Context.SaveChangesAsync();
         }
         catch (Exception ex)

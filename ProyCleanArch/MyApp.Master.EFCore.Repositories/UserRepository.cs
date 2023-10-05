@@ -15,10 +15,10 @@ internal sealed class UserRepository : IUserRepository
     {
         var NewUser = user.ToUser(PasswordHasher);
         NewUser.Id = Guid.NewGuid().ToString();
-        Context.Add(NewUser);
 
         try
         {
+            Context.Add(NewUser);
             await Context.SaveChangesAsync();
         }
         catch (Exception ex)

@@ -28,11 +28,12 @@ internal sealed class RegisterOganizationInteractor : IRegisterOrganizationInput
 
         var Id = await OrganizationRepository.RegisterAsync(organization);
 
+        string DatabaseName = $"{organization.Name}-{Id}";
         await MigrationService.ApplyMigration(new MigratorTenantInfo
         {
             TenantId = Id,
             ConnectionString = MigrationService.BuildConnectionString(
-                CrossConnectionStringOptions.CrossDb, organization.Name)
+                CrossConnectionStringOptions.CrossDb, DatabaseName)
         });
 
         return Id;

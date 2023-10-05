@@ -4,18 +4,23 @@ internal sealed class ProductRepository : IProductRepository
 {
     private readonly CrossContext Context;
 
-    public ProductRepository(CrossContext context)
+    public ProductRepository(ITenantService tenantService)
     {
-        Context = context;
+        var ConnectionString = tenantService.GetConnectionString();
+        var Options = new DbContextOptionsBuilder<CrossContext>()
+            .UseSqlServer(ConnectionString)
+            .Options;
+
+        Context = new CrossContext(Options);
     }
 
     public async Task<int> RegisterAsync(RegisterProductDto product)
     {
         var NewProduct = product.ToProduct();
-        Context.Add(NewProduct);
 
         try
         {
+            Context.Add(NewProduct);
             await Context.SaveChangesAsync();
         }
         catch (Exception ex)

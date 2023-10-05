@@ -2,5 +2,5 @@
 
 public interface ITenantService
 {
-    Task<string> GetConnectionString();
+    string GetConnectionString();
 }
