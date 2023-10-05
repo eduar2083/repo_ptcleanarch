@@ -11,13 +11,6 @@ internal sealed class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.Property(p => p.UnitPrice)
             .HasPrecision(8, 2);
 
-        builder.Property(p => p.OrganizationId)
-            .IsRequired()
-            .HasMaxLength(72);
-
-        builder.HasIndex(p => p.OrganizationId)
-            .IsClustered(false);
-
         builder.HasIndex(p => p.Name)
             .IsUnique(true);
     }
