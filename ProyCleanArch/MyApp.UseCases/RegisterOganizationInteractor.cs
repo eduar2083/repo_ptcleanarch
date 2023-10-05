@@ -26,16 +26,16 @@ internal sealed class RegisterOganizationInteractor : IRegisterOrganizationInput
             throw new ValidationException(ValidationErrors);
         }
 
-        var Id = await OrganizationRepository.RegisterAsync(organization);
+        var OrganizationId = await OrganizationRepository.RegisterAsync(organization);
 
-        string DatabaseName = $"{organization.Name}-{Id}";
+        string TenantId = $"{organization.Name}-{OrganizationId}";
         await MigrationService.ApplyMigration(new MigratorTenantInfo
         {
-            TenantId = Id,
+            TenantId = TenantId,
             ConnectionString = MigrationService.BuildConnectionString(
-                CrossConnectionStringOptions.CrossDb, DatabaseName)
+                CrossConnectionStringOptions.CrossDb, TenantId)
         });
 
-        return Id;
+        return OrganizationId;
     }
 }
