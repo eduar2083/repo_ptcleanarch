@@ -11,11 +11,6 @@ internal sealed class OrganizationConfiguration : IEntityTypeConfiguration<Organ
             .IsRequired()
             .HasMaxLength(100);
 
-        builder.Property(o => o.Ruc)
-            .IsRequired()
-            .HasMaxLength(11)
-            .IsFixedLength();
-
         builder.HasIndex(o => o.Name)
             .IsUnique(true);
     }

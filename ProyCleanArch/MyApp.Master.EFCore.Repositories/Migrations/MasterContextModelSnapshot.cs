@@ -32,12 +32,6 @@ namespace MyApp.Master.EFCore.Repositories.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Ruc")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nchar(11)")
-                        .IsFixedLength();
-
                     b.HasKey("Id");
 
                     b.HasIndex("Name")

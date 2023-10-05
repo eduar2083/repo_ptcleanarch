@@ -15,7 +15,6 @@ namespace MyApp.Master.EFCore.Repositories.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(72)", maxLength: 72, nullable: false),
-                    Ruc = table.Column<string>(type: "nchar(11)", fixedLength: true, maxLength: 11, nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>

@@ -16,7 +16,6 @@ GO
 
 CREATE TABLE [Organizations] (
     [Id] nvarchar(72) NOT NULL,
-    [Ruc] nchar(11) NOT NULL,
     [Name] nvarchar(100) NOT NULL,
     CONSTRAINT [PK_Organizations] PRIMARY KEY ([Id])
 );
@@ -44,7 +43,7 @@ CREATE NONCLUSTERED INDEX [IX_Users_OrganizationId] ON [Users] ([OrganizationId]
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20231004191627_Initial_Master', N'7.0.11');
+VALUES (N'20231005021417_Initial_Master', N'7.0.11');
 GO
 
 COMMIT;

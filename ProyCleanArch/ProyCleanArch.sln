@@ -59,15 +59,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomExceptions.HandlerMid
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{133E09A9-7CD7-4D14-97DC-126B4FCE082C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Presenters", "MyApp.Presenters\MyApp.Presenters.csproj", "{40F1E5D6-0BA2-4244-BC8C-41AA5710C651}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Presenters", "MyApp.Presenters\MyApp.Presenters.csproj", "{40F1E5D6-0BA2-4244-BC8C-41AA5710C651}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Services", "MyApp.Services\MyApp.Services.csproj", "{C8637385-B3E0-41D0-AE54-5A4725C5E4D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Services", "MyApp.Services\MyApp.Services.csproj", "{C8637385-B3E0-41D0-AE54-5A4725C5E4D2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4BBA0EB6-B38C-4104-AC19-14AD10EA0BAF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Master.EFCore.Repositories", "MyApp.Master.EFCore.Repositories\MyApp.Master.EFCore.Repositories.csproj", "{2E16316D-35B2-4FBC-95B3-A8B02206A9E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Cross.EFCore.Repositories", "MyApp.Cross.EFCore.Repositories\MyApp.Cross.EFCore.Repositories.csproj", "{B055718D-4191-4129-AFD5-C2B9DB7CC95F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.Cross.EFCore.Repositories", "MyApp.Cross.EFCore.Repositories\MyApp.Cross.EFCore.Repositories.csproj", "{B055718D-4191-4129-AFD5-C2B9DB7CC95F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Process", "Process", "{A67180A2-4336-4E54-933F-06F0AC8DCF0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Migrator", "MyApp.Migrator\MyApp.Migrator.csproj", "{FC8C597B-7CD0-4894-AF0B-C380A32A68B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +139,10 @@ Global
 		{B055718D-4191-4129-AFD5-C2B9DB7CC95F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B055718D-4191-4129-AFD5-C2B9DB7CC95F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B055718D-4191-4129-AFD5-C2B9DB7CC95F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC8C597B-7CD0-4894-AF0B-C380A32A68B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC8C597B-7CD0-4894-AF0B-C380A32A68B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC8C597B-7CD0-4894-AF0B-C380A32A68B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC8C597B-7CD0-4894-AF0B-C380A32A68B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +177,8 @@ Global
 		{4BBA0EB6-B38C-4104-AC19-14AD10EA0BAF} = {B3A142A0-5583-449E-8138-BED62B663C14}
 		{2E16316D-35B2-4FBC-95B3-A8B02206A9E8} = {3F7E8C34-FAB1-42BE-9627-9DC6559D6977}
 		{B055718D-4191-4129-AFD5-C2B9DB7CC95F} = {3F7E8C34-FAB1-42BE-9627-9DC6559D6977}
+		{A67180A2-4336-4E54-933F-06F0AC8DCF0D} = {3F21D68F-4D36-4A50-9803-1250BD1A4637}
+		{FC8C597B-7CD0-4894-AF0B-C380A32A68B9} = {A67180A2-4336-4E54-933F-06F0AC8DCF0D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED577AB4-DEAB-4882-81B4-8140B6BD66C3}

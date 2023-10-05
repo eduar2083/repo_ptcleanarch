@@ -11,7 +11,7 @@ using MyApp.EFCore.Repositories.DataContexts;
 namespace MyApp.Master.EFCore.Repositories.Migrations
 {
     [DbContext(typeof(MasterContext))]
-    [Migration("20231004191627_Initial_Master")]
+    [Migration("20231005021417_Initial_Master")]
     partial class Initial_Master
     {
         /// <inheritdoc />
@@ -34,12 +34,6 @@ namespace MyApp.Master.EFCore.Repositories.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Ruc")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nchar(11)")
-                        .IsFixedLength();
 
                     b.HasKey("Id");
 
