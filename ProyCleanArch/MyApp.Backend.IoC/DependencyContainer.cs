@@ -4,7 +4,7 @@ public static class DependencyContainer
 {
     public static IServiceCollection AddMyAppBackendServices(this IServiceCollection services,
         Action<MasterConnectionStringsOptions> masterConnectionStringConfigurator,
-        Action<CrossConnectionStringsOptions> crossConnectionstringConfigurator,
+        Action<CrossConnectionStringOptions> crossConnectionstringConfigurator,
         Action<JwtOptions> jwtOptionsConfigurator)
     {
         services.AddSecurityServices(jwtOptionsConfigurator)

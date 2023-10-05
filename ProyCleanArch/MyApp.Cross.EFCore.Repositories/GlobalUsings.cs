@@ -1,13 +1,15 @@
 global using CustomExceptions;
+global using Microsoft.Data.SqlClient;
 global using Microsoft.EntityFrameworkCore;
-global using Microsoft.EntityFrameworkCore.Design;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
-global using Microsoft.Extensions.Options;
 global using MyApp.Backend.BussinessObjects.Interfaces.Repositories;
+global using MyApp.Backend.BussinessObjects.Interfaces.Services;
 global using MyApp.Backend.BussinessObjects.Options;
+global using MyApp.Backend.BussinessObjects.ValueObjects;
 global using MyApp.Cross.EFCore.Repositories;
 global using MyApp.Cross.EFCore.Repositories.DataContexts;
 global using MyApp.Cross.EFCore.Repositories.Entities;
 global using MyApp.Cross.EFCore.Repositories.Mappers;
+global using MyApp.Cross.EFCore.Repositories.Services;
 global using MyApp.Shared.BusinessObjects.Dtos;
 global using System.Reflection;

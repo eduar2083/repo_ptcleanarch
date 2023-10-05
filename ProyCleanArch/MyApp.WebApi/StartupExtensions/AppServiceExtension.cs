@@ -7,8 +7,8 @@ public static class AppServiceExtension
         Action<MasterConnectionStringsOptions> MasterConnectionStringOptionsConfigurator = options =>
         builder.Configuration.GetSection(MasterConnectionStringsOptions.SectionKey).Bind(options);
 
-        Action<CrossConnectionStringsOptions> CrossConnectionStringOptionsConfigurator = options =>
-        builder.Configuration.GetSection(CrossConnectionStringsOptions.SectionKey).Bind(options);
+        Action<CrossConnectionStringOptions> CrossConnectionStringOptionsConfigurator = options =>
+        builder.Configuration.GetSection(CrossConnectionStringOptions.SectionKey).Bind(options);
 
         Action<JwtOptions> JwtOptionsConfigurator = options =>
         builder.Configuration.GetSection(JwtOptions.SectionKey).Bind(options);

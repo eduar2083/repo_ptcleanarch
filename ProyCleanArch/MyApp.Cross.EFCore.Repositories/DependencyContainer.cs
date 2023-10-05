@@ -3,10 +3,12 @@
 public static class DependencyContainer
 {
     public static IServiceCollection AddCrossRepositoryServices(this IServiceCollection services,
-        Action<CrossConnectionStringsOptions> connectionStringOptionsConfigurator)
+        Action<CrossConnectionStringOptions> connectionStringOptionsConfigurator)
     {
-        services.AddOptions<CrossConnectionStringsOptions>().Configure(connectionStringOptionsConfigurator);
+        services.AddOptions<CrossConnectionStringOptions>().Configure(connectionStringOptionsConfigurator);
         services.AddDbContext<CrossContext>();
+
+        services.AddScoped<IMigrationService, MigrationService>();
 
         services.AddScoped<IProductRepository, ProductRepository>();
 
