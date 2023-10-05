@@ -2,5 +2,5 @@
 
 public interface ITenantService
 {
-    string GetTenantId();
+    Task<string> GetConnectionString();
 }

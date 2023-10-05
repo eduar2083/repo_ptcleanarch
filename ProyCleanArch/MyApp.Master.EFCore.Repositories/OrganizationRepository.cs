@@ -33,4 +33,12 @@ internal sealed class OrganizationRepository : IOrganizationRepository
             .Select(o => o.ToOrganizationDto())
             .ToListAsync();
     }
+
+    public async Task<OrganizationDto> GetByIdAsync(string id)
+    {
+        return await Context.Organizations
+            .Select(o => o.ToOrganizationDto())
+            .Where(o => o.Id == id)
+            .FirstOrDefaultAsync();
+    }
 }

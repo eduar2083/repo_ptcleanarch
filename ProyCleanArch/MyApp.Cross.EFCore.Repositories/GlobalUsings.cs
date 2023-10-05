@@ -1,7 +1,9 @@
 global using CustomExceptions;
+global using Microsoft.AspNetCore.Http;
 global using Microsoft.Data.SqlClient;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Microsoft.Extensions.Options;
 global using MyApp.Backend.BussinessObjects.Interfaces.Repositories;
 global using MyApp.Backend.BussinessObjects.Interfaces.Services;
 global using MyApp.Backend.BussinessObjects.Options;

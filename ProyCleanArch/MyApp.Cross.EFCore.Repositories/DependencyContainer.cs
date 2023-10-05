@@ -9,6 +9,7 @@ public static class DependencyContainer
         services.AddDbContext<CrossContext>();
 
         services.AddScoped<IMigrationService, MigrationService>();
+        services.AddScoped<ITenantService, TenantService>();
 
         services.AddScoped<IProductRepository, ProductRepository>();
 
