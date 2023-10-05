@@ -8,6 +8,7 @@ public static class DependencyContainer
         services.AddScoped<IValidator<RegisterOrganizationDto>, RegisterOrganizationValidator>();
         services.AddScoped<IValidator<UserCredentialsDto>, UserCredentialsValidator>();
         services.AddScoped<IValidator<RegisterProductDto>, RegisterProductValidator>();
+        services.AddScoped<IValidator<UpdateProductDto>, UpdateProductValidator>();
 
         return services;
     }

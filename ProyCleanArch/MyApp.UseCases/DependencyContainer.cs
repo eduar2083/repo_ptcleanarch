@@ -11,6 +11,7 @@ public static class DependencyContainer
         services.AddScoped<IGetProductByIdInputPort, GetProductByIdInteractor>();
         services.AddScoped<IListProductsInputPort, ListProductsInteractor>();
         services.AddScoped<IDeleteProductInputPort, DeleteProductInteractor>();
+        services.AddScoped<IUpdateProductInputPort, UpdateProductInteractor>();
 
         return services;
     }

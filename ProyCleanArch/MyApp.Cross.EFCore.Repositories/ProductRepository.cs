@@ -62,4 +62,13 @@ internal sealed class ProductRepository : IProductRepository
 
         return await Context.SaveChangesAsync() > 0;
     }
+
+    public async Task UpdateAsync(UpdateProductDto product)
+    {
+        var FoundProduct = await Context.Products.FindAsync(product.Id);
+        FoundProduct.Name = product.Name;
+        FoundProduct.UnitPrice = product.UnitPrice;
+
+        await Context.SaveChangesAsync();
+    }
 }

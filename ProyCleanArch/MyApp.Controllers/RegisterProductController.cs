@@ -16,9 +16,9 @@ internal sealed class RegisterProductController
         .WithTags("Cross");
     }
 
-    private static async Task<IResult> Register(RegisterProductDto newUser, [FromQuery] string slugTenant, IRegisterProductInputPort inputPort)
+    private static async Task<IResult> Register(RegisterProductDto newProduct, [FromQuery] string slugTenant, IRegisterProductInputPort inputPort)
     {
-        var Id = await inputPort.RegisterAsync(newUser);
+        var Id = await inputPort.RegisterAsync(newProduct);
 
         return Results.Ok(Id);
     }
